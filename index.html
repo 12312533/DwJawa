@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2a060d">
+<title>The Wedding of Alexandra &amp; Rizky</title>
+<meta name="description" content="Undangan pernikahan Alexandra Putri &amp; Rizky Pratama — 12 Desember 2026, Grand Ballroom Jakarta">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400;500&family=Noto+Sans+Javanese:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<div class="progress" id="progress"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<!-- GERBANG PEMBUKA (pintu 3D ala regol keraton) -->
+<div id="cover-page" class="gate">
+  <div class="door l"></div><div class="door r"></div>
+  <i data-orn="kayon" class="gate-kayon"></i>
+  <div class="gate-center">
+    <p class="aksara" aria-hidden="true">ꦱꦸꦒꦺꦁꦫꦮꦸꦃ</p>
+    <p class="small">Sugeng Rawuh · The Wedding of</p>
+    <h1 class="names"><span>Alexandra</span><em>&amp;</em><span>Rizky</span></h1>
+    <p class="cover-date">12 · 12 · 2026</p>
+    <p class="guest-to">Kepada Yth. Bapak/Ibu/Saudara/i<strong id="guest-name">Tamu Undangan</strong></p>
+    <button id="btn-open-invitation" class="btn btn-gold"><i class="ph ph-envelope-open"></i> Buka Undangan</button>
+  </div>
+</div>
+
+<header class="nav" id="navbar">
+  <a href="#hero" class="logo">A<em>&amp;</em>R</a>
+  <button class="burger" aria-label="Buka menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+  <nav id="nav-links">
+    <a href="#hero">Home</a><a href="#details">Details</a><a href="#story">Story</a><a href="#gallery">Gallery</a><a href="#rsvp">RSVP</a><a href="#gift">Gift</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1920&q=80">
+    <source src="prewed.mp4" type="video/mp4">
+  </video>
+  <div class="hero-shade"></div>
+  <canvas id="k3d-hero" class="k3d" aria-hidden="true"></canvas>
+  <div class="petals" data-n="9"></div>
+  <div class="hero-copy">
+    <p class="aksara hl" aria-hidden="true">ꦱꦸꦒꦺꦁꦫꦮꦸꦃ</p>
+    <p class="small hl">The Wedding of</p>
+    <h1 class="hero-names"><span class="hl">Alexandra Putri</span><span class="hl"><em>&amp;</em> Rizky Pratama</span></h1>
+    <p class="hero-meta hl">Sabtu, 12 Desember 2026 &nbsp;—&nbsp; Grand Ballroom Jakarta</p>
+  </div>
+  <p class="hero-side" aria-hidden="true">12.12.2026</p>
+  <a href="#details" class="scroll" aria-label="Gulir ke bawah"><span></span></a>
+</section>
+
+<!-- DETAILS -->
+<section id="details" class="sec batik">
+  <div class="orn" aria-hidden="true"><i data-orn="kayon" class="kayon"></i><i data-orn="melati" class="mel"></i><i data-orn="kayon" class="kayon r"></i></div>
+  <div class="wrap grid2">
+    <div data-r>
+      <p class="small dark-t">Dinten Bagya</p>
+      <h2 class="title">Hari Bahagia Kami</h2>
+      <p class="lead">Dengan penuh syukur dan kerendahan hati, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberi doa restu pada pernikahan kami.</p>
+    </div>
+    <div class="date-block" data-r>
+      <div class="big-num">12</div>
+      <div>
+        <p class="month">Desember 2026</p><p>Sabtu, 08.00 WIB – selesai</p>
+        <p class="venue"><strong>Grand Ballroom Jakarta</strong><br>Jl. Contoh No. 123, Jakarta Selatan</p>
+        <div class="btn-row"><a href="#" id="btn-maps" target="_blank" rel="noopener" class="btn btn-line">Lihat Lokasi <i class="ph ph-arrow-up-right"></i></a>
+        <button type="button" id="btn-cal" class="btn btn-line"><i class="ph ph-calendar-plus"></i> Simpan ke Kalender</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown" class="sec dark">
+  <i data-orn="janur" class="janur a"></i><i data-orn="janur" class="janur b"></i>
+  <div class="wrap center">
+    <h2 class="title" data-r>Menuju Hari Bahagia</h2>
+    <div class="cd" id="countdown-timer" data-stagger>
+      <div><b id="cd-days">00</b><span>Hari</span></div>
+      <div><b id="cd-hours">00</b><span>Jam</span></div>
+      <div><b id="cd-minutes">00</b><span>Menit</span></div>
+      <div><b id="cd-seconds">00</b><span>Detik</span></div>
+    </div>
+    <h3 id="cd-arrived" class="hidden arrived">The Day Has Arrived</h3>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section id="event" class="sec">
+  <div class="wrap narrow">
+    <h2 class="title" data-r>Tata Upacara</h2>
+    <article class="ev" data-r><time>08.00</time><div><h3>Ijab Qabul / Pemberkatan</h3><p>Grand Ballroom Jakarta · sampai 10.00 WIB</p><p class="soft">Momen sakral penyatuan dua insan dalam ikatan suci.</p></div></article>
+    <article class="ev" data-r><time>11.00</time><div><h3>Panggih &amp; Resepsi</h3><p>Grand Ballroom Jakarta · sampai 14.00 WIB</p><p class="soft">Merayakan kebahagiaan bersama keluarga dan sahabat.</p></div></article>
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section id="dresscode" class="sec tint">
+  <div class="wrap center" data-r>
+    <h2 class="title">Busana</h2>
+    <p class="lead">Mohon berkenan mengenakan nuansa maroon (soga), putih, dan emas — selaras dengan warna kebesaran adat.</p>
+    <div class="swatches" aria-label="Palet warna"><i style="background:#6d0f1f" title="Maroon"></i><i style="background:#9b2335" title="Merah anggur"></i><i style="background:#fff" title="Putih"></i><i style="background:#c9a24b" title="Emas"></i></div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="sec">
+  <div class="wrap narrow">
+    <h2 class="title" data-r>Perjalanan Kami</h2>
+    <ol class="tl"><span class="tl-line" aria-hidden="true"></span>
+      <li data-r><b>2021</b><div><h3>First Meet</h3><p>Everything started from a simple meeting.</p></div></li>
+      <li data-r><b>2022</b><div><h3>Getting Closer</h3><p>We started discovering how much we enjoyed being together.</p></div></li>
+      <li data-r><b>2024</b><div><h3>The Proposal</h3><p>A beautiful question with a beautiful answer.</p></div></li>
+      <li data-r><b>2026</b><div><h3>The Wedding</h3><p>And now, we begin our forever.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="sec dark">
+  <div class="wrap">
+    <div class="gal-head" data-r><h2 class="title">Galeri</h2>
+      <div class="gal-nav"><button id="gal-prev" aria-label="Geser kiri"><i class="ph ph-caret-left"></i></button><button id="gal-next" aria-label="Geser kanan"><i class="ph ph-caret-right"></i></button></div></div>
+  </div>
+  <div class="gallery" id="gallery-grid" data-lenis-prevent-wheel></div>
+  <p class="center soft hint">Geser atau seret untuk melihat foto lainnya</p>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="sec">
+  <div class="wrap narrow center" data-r>
+    <h2 class="title">Our Moments</h2>
+    <div class="frame" data-tilt><video controls playsinline preload="metadata" poster="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video></div>
+  </div>
+</section>
+
+<!-- RSVP + WISHES -->
+<section id="rsvp" class="sec dark">
+  <div class="wrap grid2">
+    <div data-r>
+      <h2 class="title">RSVP</h2>
+      <p class="lead">Mohon konfirmasi kehadiran Anda di hari bahagia kami.</p>
+      <form id="rsvp-form" class="form">
+        <label>Nama Lengkap<input type="text" id="rsvp-name" required autocomplete="name"></label>
+        <label>Kehadiran<select id="rsvp-status" required><option value="" disabled selected>Pilih</option><option value="Hadir">Akan Hadir</option><option value="Tidak Hadir">Tidak Dapat Hadir</option></select></label>
+        <label>Jumlah Tamu<select id="rsvp-guest"><option value="1">1 Orang</option><option value="2">2 Orang</option><option value="3">3 Orang</option><option value="4">4 Orang</option><option value="5">5 Orang</option></select></label>
+        <button type="submit" class="btn btn-gold">Kirim Konfirmasi</button>
+      </form>
+    </div>
+    <div id="wishes" data-r>
+      <h2 class="title">Ucapan &amp; Doa</h2>
+      <form id="wishes-form" class="form">
+        <label>Nama<input type="text" id="wish-name" required maxlength="60"></label>
+        <label>Ucapan<textarea id="wish-message" rows="3" required maxlength="400"></textarea></label>
+        <button type="submit" class="btn btn-line light">Kirim Ucapan</button>
+      </form>
+      <div class="wishes" id="wishes-list" data-lenis-prevent></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT -->
+<section id="gift" class="sec">
+  <div class="wrap center">
+    <h2 class="title" data-r>Tanda Kasih</h2>
+    <p class="lead" data-r>Kehadiran Anda adalah hadiah terbaik. Jika berkenan memberi tanda kasih, berikut pilihannya.</p>
+    <div class="gifts" data-stagger>
+      <div class="gift" data-tilt><i class="ph ph-bank"></i><h3>Bank BCA</h3><p class="acc" id="bca-number">1234567890</p><p class="soft">a.n. Alexandra Putri</p><button class="btn btn-line btn-copy" data-copy="bca-number">Salin No. Rekening</button></div>
+      <div class="gift" data-tilt><i class="ph ph-wallet"></i><h3>GoPay / DANA</h3><p class="acc" id="wallet-number">081234567890</p><p class="soft">a.n. Rizky Pratama</p><button class="btn btn-line btn-copy" data-copy="wallet-number">Salin Nomor</button></div>
+      <div class="gift" data-tilt><i class="ph ph-qr-code"></i><h3>QRIS</h3><p class="acc">Scan &amp; kirim</p><p class="soft">Semua e-wallet &amp; m-banking</p><button class="btn btn-line" id="btn-show-qr">Lihat QR</button></div>
+      <div class="gift" data-tilt><i class="ph ph-package"></i><h3>Kirim Kado</h3><p class="addr" id="address-text">Jl. Contoh No. 123, Jakarta Selatan, Indonesia</p><p class="soft">Alexandra &amp; Rizky</p><button class="btn btn-line btn-copy" data-copy="address-text">Salin Alamat</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<section class="closing">
+  <div class="hero-shade"></div>
+  <canvas id="k3d-end" class="k3d" aria-hidden="true"></canvas>
+  <div class="petals" data-n="10"></div>
+  <div class="closing-copy" data-r>
+    <p class="aksara" aria-hidden="true">ꦩꦠꦸꦂꦤꦸꦮꦸꦤ꧀</p>
+    <p class="small">Matur nuwun · Terima kasih telah menjadi bagian dari hari istimewa kami</p>
+    <h2 class="names"><span>Alexandra</span><em>&amp;</em><span>Rizky</span></h2>
+    <p class="cover-date">12 · 12 · 2026</p>
+  </div>
+</section>
+</main>
+
+<footer><p>© 2026 Alexandra &amp; Rizky · Dibuat dengan cinta</p></footer>
+
+<div class="float">
+  <button id="btn-music" class="fbtn" aria-label="Putar atau jeda musik"><i class="ph ph-music-notes"></i></button>
+  <button id="btn-totop" class="fbtn" aria-label="Kembali ke atas"><i class="ph ph-arrow-up"></i></button>
+</div>
+<audio id="bg-music" loop preload="none"><source src="Ketaton Cerita - Galih Prastya ( Lirik Lagu ).mp3" type="audio/ogg"></audio>
+
+<div id="modal-rsvp" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><h2 class="title">Terima Kasih!</h2><p>Konfirmasi Anda telah kami terima.</p><button class="btn btn-gold close-modal">Tutup</button></div></div>
+<div id="modal-qr" class="modal" role="dialog" aria-modal="true"><div class="modal-box"><button class="x close-modal" aria-label="Tutup">&times;</button><h2 class="title">Scan QRIS</h2><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=WeddingGiftAlexandraRizky" alt="QRIS"></div></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Galeri" data-lenis-prevent>
+  <button class="lb-close" aria-label="Tutup">&times;</button>
+  <button class="lb-prev" aria-label="Sebelumnya"><i class="ph ph-caret-left"></i></button>
+  <img id="lightbox-img" src="" alt="Foto galeri">
+  <button class="lb-next" aria-label="Berikutnya"><i class="ph ph-caret-right"></i></button>
+</div>
+
+<!-- Library (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- Kode proyek -->
+<script src="ornaments.js"></script>
+<script src="scene3d.js"></script>
+<script src="motion.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
